@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./page.scss";
+// import styles from "./page.scss";
 
 const render = () => {
-  return (<div className={styles.root}>
-    Hello world.
+  return (<div>
+    Finally!
   </div>);
 }
 
