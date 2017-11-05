@@ -19,7 +19,7 @@ RUN curl -Lso /tmp/containerpilot.tar.gz \
     && mv containerpilot /bin/ \
     && rm /tmp/containerpilot.tar.gz
 
-COPY .eslintrc /code/.eslintrc
+COPY .eslintrc.json /code/.eslintrc.json
 COPY .stylelintrc /code/.stylelintrc
 COPY src /code/src
 COPY etc/nginx.conf /etc/nginx/nginx.conf

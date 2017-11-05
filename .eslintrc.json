@@ -9,9 +9,10 @@
   },
   "plugins": [
     "react",
-    "babel",
+    "babel"
   ],
   "rules": {
     "react/jsx-uses-react": 2,
+    "quotes": [2, "double"]
   }
 }
