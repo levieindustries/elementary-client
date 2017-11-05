@@ -1,0 +1,44 @@
+{
+  "name": "elementary-client",
+  "version": "0.0.1",
+  "description": "The front end for Elementary, the Oscar party voting app.",
+  "main": "index.js",
+  "repository": "github.com:levieindustries/elementary-client",
+  "author": {
+    "name": "Lars Levie",
+    "email": "larslevie@gmail.com"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/levieindustries/elementary-client/issues"
+  },
+  "homepage": "https://github.com/levieindustries/elementary-client#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "eslint": "^4.10.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-react": "^7.4.0",
+    "file-loader": "^1.1.5",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.6.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
+  },
+  "scripts": {
+    "build": "webpack --config etc/webpack.config.js --progress --colors",
+    "watch": "webpack --config etc/webpack.config.js --progress --colors --watch",
+    "start": "webpack-dev-server --config etc/webpack.config.js  --open"
+  },
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  }
+}

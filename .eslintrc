@@ -1,0 +1,17 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "react",
+    "babel",
+  ],
+  "rules": {
+    "react/jsx-uses-react": 2,
+  }
+}
