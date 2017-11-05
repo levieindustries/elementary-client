@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ "$WATCH" = "1" ]; then
+  exec npm run watch
+else
+  exec npm run build
+fi

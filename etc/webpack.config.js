@@ -1,5 +1,7 @@
+const LiveReloadPlugin = require("webpack-livereload-plugin");
 const path = require("path");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
   entry: "./src/index.js",
@@ -17,10 +19,11 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        loader: "babel-loader",
-        exclude: /node_modules/,
-        query: {
-          presets: ["env", "react"]
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["env", "stage-0", "react"]
+          }
         }
       },
       {
@@ -28,11 +31,8 @@ module.exports = {
         loaders: [
           "style-loader",
           "css-loader?modules",
-          "sass-loader"]
-      },
-      {
-        test: /\.html$/,
-        loader: 'html'
+          "sass-loader"
+        ]
       }
     ]
   },
@@ -40,10 +40,12 @@ module.exports = {
     filename: "index.js",
     path: path.resolve(__dirname, "../build")
   },
+  devtool: "source-map",
   plugins: [
-    new HtmlWebpackPlugin({
-      title: "Elementary",
-      filename: "public/index.html"
-    })
+    new LiveReloadPlugin(),
+    new UglifyJSPlugin({
+      sourceMap: true
+    }),
+    new webpack.EnvironmentPlugin(["WATCH"])
   ]
 };

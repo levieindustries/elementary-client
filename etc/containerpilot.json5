@@ -3,7 +3,7 @@
   jobs: [
     {
       name: "elementary-client",
-      exec: "nginx",
+      exec: "bin/watch",
       port: 80,
       tags: ["consul-lb.url=elementary.com.dev"],
       health: {exec: "curl -fsSo /dev/null localhost", interval: 5, ttl: 10},

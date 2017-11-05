@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+if [ "$WATCH" = "1" ]; then
+  bin/build &
+fi
+
+exec nginx

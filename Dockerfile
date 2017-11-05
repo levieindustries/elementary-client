@@ -2,14 +2,15 @@ FROM node:9.0.0-alpine
 
 RUN apk --update add \
       nginx \
-      curl
+      curl \
+      yarn
 
 RUN mkdir -p /run/nginx
 
 WORKDIR /code
 
 COPY package*.json /code/
-RUN npm install
+RUN yarn install
 
 ENV CONTAINERPILOT=/code/etc/containerpilot.json5
 ENV CONTAINERPILOT_VERSION 3.5.0

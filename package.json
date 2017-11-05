@@ -19,6 +19,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^0.28.7",
     "eslint": "^4.10.0",
     "eslint-loader": "^1.9.0",
@@ -29,15 +30,17 @@
     "node-sass": "^4.6.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
+    "uglifyjs-webpack-plugin": "^1.0.1",
     "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.4"
+    "webpack-dotenv-plugin": "^2.0.2",
+    "webpack-livereload-plugin": "^1.0.0"
   },
   "scripts": {
     "build": "webpack --config etc/webpack.config.js --progress --colors",
-    "watch": "webpack --config etc/webpack.config.js --progress --colors --watch",
-    "start": "webpack-dev-server --config etc/webpack.config.js  --open"
+    "watch": "webpack --config etc/webpack.config.js --progress --colors --watch"
   },
   "dependencies": {
+    "lodash": "^4.17.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   }
