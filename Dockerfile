@@ -9,7 +9,8 @@ RUN mkdir -p /run/nginx
 
 WORKDIR /code
 
-COPY package*.json /code/
+COPY package.json ./
+COPY yarn.lock ./
 RUN yarn install
 
 ENV CONTAINERPILOT=/code/etc/containerpilot.json5
