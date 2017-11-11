@@ -1,3 +1,4 @@
+const _ = require("lodash");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const LiveReloadPlugin = require("webpack-livereload-plugin");
 const path = require("path");
@@ -41,11 +42,9 @@ module.exports = {
     path: path.resolve(__dirname, "../build")
   },
   devtool: "source-map",
-  plugins: [
+  plugins: _.compact([
     new LiveReloadPlugin(),
-    new UglifyJSPlugin({
-      sourceMap: true
-    }),
+    process.env.MINIFY ? new UglifyJSPlugin({sourceMap: true}) : null,
     new webpack.EnvironmentPlugin({
       WATCH: JSON.stringify(process.env.WATCH || 0)
     }),
@@ -54,5 +53,5 @@ module.exports = {
       filename: "public/index.html",
       template: "src/public/index.html"
     })
-  ]
+  ])
 };
