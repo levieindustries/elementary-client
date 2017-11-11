@@ -6,7 +6,7 @@ const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 const webpack = require("webpack");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: {index: "./src/index.js"},
   module: {
     rules: [
       {
@@ -38,7 +38,7 @@ module.exports = {
     ]
   },
   output: {
-    filename: "index.js",
+    filename: "[name].js",
     path: path.resolve(__dirname, "../build")
   },
   devtool: "source-map",
