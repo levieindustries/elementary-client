@@ -21,11 +21,11 @@ RUN curl -Lso /tmp/containerpilot.tar.gz \
     && mv containerpilot /bin/ \
     && rm /tmp/containerpilot.tar.gz
 
-COPY .eslintrc.json /code/.eslintrc.json
-COPY .stylelintrc /code/.stylelintrc
-COPY src /code/src
+COPY .eslintrc.json .eslintrc.json
+COPY .stylelintrc .stylelintrc
+COPY src src
 COPY etc/nginx.conf /etc/nginx/nginx.conf
-COPY etc /code/etc
+COPY etc etc
 RUN npm run build
 
 COPY . /code
