@@ -37,7 +37,7 @@ module.exports = {
           },
           {
             loader: "css-loader?modules",
-            options: {sourceMap: true, importLoaders: 1}
+            options: {sourceMap: true}
           },
           {
             loader: "postcss-loader",

@@ -1,5 +1,5 @@
 import {render} from "react-dom";
 import React from "react";
-import Page from "../components/page";
+import RootLayout from "../components/root/layout.js";
 
-render(<Page />, document.getElementById("main"));
+render(<RootLayout />, window.document.getElementById("main"));
