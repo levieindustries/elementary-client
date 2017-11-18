@@ -2,11 +2,12 @@ import React from "react";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import Home from "../home/layout.js";
 import NotFound from "../shared/not-found";
+import AuthenticatedRoute from "../shared/authenticated-route";
 
 const render = () =>
   <BrowserRouter>
     <Switch>
-      <Route exact path="/" component={Home} />
+      <AuthenticatedRoute exact path="/" component={Home} />
       <Route component={NotFound} />
     </Switch>
   </BrowserRouter>;

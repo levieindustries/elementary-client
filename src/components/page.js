@@ -7,4 +7,5 @@ const render = () => {
   </div>);
 };
 
-export default props => render({props});
+const Page = props => render({props});
+export default Page;
