@@ -3,7 +3,7 @@ import styles from "./page.scss";
 
 const render = () => {
   return (<div className={styles.root}>
-    Finally! WTF?
+    Finally! It's working!?
   </div>);
 };
 
