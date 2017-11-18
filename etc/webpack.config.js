@@ -31,10 +31,10 @@ module.exports = {
         test: /\.scss/,
         exclude: [/node_modules/],
         use: [
-          "style-loader",
-          "css-loader?modules",
-          "sass-loader",
-          "postcss-loader"
+          {loader: "style-loader", options: {sourceMap: true}},
+          {loader: "css-loader", options: {modules: true, sourceMap: true, importLoaders: 1}},
+          {loader: "postcss-loader", options: {sourceMap: true}},
+          {loader: "sass-loader", options: {sourceMap: true}}
         ]
       }
     ]
