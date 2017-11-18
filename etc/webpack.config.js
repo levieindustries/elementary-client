@@ -31,9 +31,22 @@ module.exports = {
         test: /\.scss/,
         exclude: [/node_modules/],
         use: [
-          {loader: "style-loader", options: {sourceMap: true}},
-          {loader: "css-loader", options: {modules: true, sourceMap: true, importLoaders: 1}},
-          {loader: "postcss-loader", options: {sourceMap: true}},
+          {
+            loader: "style-loader",
+            options: {sourceMap: true, importLoaders: 1}
+          },
+          {
+            loader: "css-loader?modules",
+            options: {sourceMap: true, importLoaders: 1}
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              config: {path: path.resolve(__dirname, "postcss.config.js")},
+              sourceMap: true,
+              importLoaders: 1
+            }
+          },
           {loader: "sass-loader", options: {sourceMap: true}}
         ]
       }
