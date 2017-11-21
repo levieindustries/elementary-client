@@ -7,7 +7,8 @@
       port: 80,
       tags: ["consul-lb.url=elementary.com.dev"],
       health: {exec: "curl -fsSo /dev/null localhost", interval: 5, ttl: 10},
-      consul: {deregisterCriticalServiceAfter: '10m'}
+      consul: {deregisterCriticalServiceAfter: '10m'},
+      logging: {raw: true}
     },
   ],
 }
