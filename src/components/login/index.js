@@ -5,7 +5,9 @@ import React, {Component} from "react";
 
 const loginMutation = gql`
   mutation auth($email: String!, $password: String!) {
-    auth(email: $email, password: $password)
+    auth(email: $email, password: $password) {
+      token
+    }
   }
 `;
 
@@ -22,7 +24,6 @@ class Login extends Component {
 
   render = () => (
     <div>
-      {console.log("stored token", localStorage.getItem("authToken"))}
       Login
       <input
         type="text"
@@ -51,9 +52,8 @@ class Login extends Component {
             })
             .then(({data: {auth}}) => {
               localStorage.setItem("authToken", auth);
-              console.log("auth", auth);
             })
-            .catch(console.log)
+            .catch(console.error)
         }
       >
         Login
@@ -66,5 +66,5 @@ Login.propTypes = {
   mutate: PropTypes.func
 };
 
-const LoginWithMutation = graphql(loginMutation)(Login);
+const LoginWithMutation = graphql(loginMutation, {options: {context: {foo: "bar"}}})(Login);
 export default LoginWithMutation;
